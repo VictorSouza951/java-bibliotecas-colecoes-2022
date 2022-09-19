@@ -38,7 +38,7 @@ public class RemoverPergunta {
 		}
 
 		pw.close();
-		sc.close();
+//		sc.close();
 	}
 
 }

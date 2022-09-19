@@ -24,14 +24,18 @@ public class TesteSalvaAluno {
 			System.out.println("Tente novamente qunado tiver 16 anos!");
 			return;
 		}
-		respostas.forEach(System.out::println);
+//		respostas.forEach(System.out::println);
 
-		String nomeDoUsuario = respostas.get(0).toUpperCase() + ".txt";
-		PrintWriter salvForm = new PrintWriter("./formulario-usuario/" + nomeDoUsuario);
+		File pasta = new File("./formulario-usuario/");
+		int listaDeArquivos = pasta.listFiles().length;
+
+		String nomeDoUsuario = respostas.get(0).toUpperCase().replace(" ", "") + ".txt";
+		PrintWriter salvForm = new PrintWriter("./formulario-usuario/" + (listaDeArquivos + 1) + "-" + nomeDoUsuario);
 		respostas.forEach(salvForm::println);
 
 		salvForm.close();
-		sc.close();
+//		sc.close();
 		leitorDeForms.close();
+		System.out.println("\nCadastro completo!");
 	}
 }

@@ -19,7 +19,7 @@ public class AddPergunta {
 		pergunta = sc.nextLine();
 		pw.println("P" + ++numeroDaPergunta + "|" + pergunta);
 		pw.close();
-		sc.close();
+//		sc.close();
 
 //	Scanner sc = new Scanner(System.in);
 //	PrintWriter pw = new PrintWriter(new FileOutputStream("formulario.txt", true));
