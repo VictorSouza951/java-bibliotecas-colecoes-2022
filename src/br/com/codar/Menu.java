@@ -5,30 +5,31 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
-	static boolean sair;
+//	static boolean sair;
+	private boolean sair = true;
 
-	private void mostraMenu() {
+	public void mostraMenu() {
 
 		System.out.println("Bem vindo a tela de cadastro!");
 		System.out.println("---------------------");
 		System.out.println("1 - Candidatar-se");
-		System.out.println("2 - Adicionar pergunta ao formul�rio");
-		System.out.println("3 - Remover pergunta do formul�rio");
-		System.out.println("4 - Listar formul�rios cadastrados");
-		System.out.println("5 - Pesquisar formul�rios cadastrados");
-		System.out.println("6 - Validar formul�rios");
+		System.out.println("2 - Adicionar pergunta ao formulario");
+		System.out.println("3 - Remover pergunta do formulario");
+		System.out.println("4 - Listar formularios cadastrados");
+		System.out.println("5 - Pesquisar formularios cadastrados");
+		System.out.println("6 - Validar formularios");
 		System.out.println("0 - Sair");
 	}
 
-	public void executaMenu() throws IOException {
-		while (!sair) {
-			mostraMenu();
-			int escolha = getEscolha();
-			entraMenu(escolha);
-		}
-	}
+//	public void executaMenu() throws IOException {
+//		while (!sair) {
+//			mostraMenu();
+//			int escolha = escolhaUsuario();
+//			entraMenu(escolha);
+//		}
+//	}
 
-	private int getEscolha() {
+	public int escolhaUsuario() {
 
 		Scanner sc = new Scanner(System.in);
 		int escolha;
@@ -41,38 +42,38 @@ public class Menu {
 
 		return escolha;
 	}
+	
+	public boolean getExecutando() {
+		return this.sair;
+	}
 
-	private void entraMenu(int escolha) throws IOException {
+	public void entraMenu(int escolha) throws IOException {
 		switch (escolha) {
 		case 0:
-			sair = true;
+			sair = false;
 			System.out.println("Saindo...");
 			break;
 		case 1:
 			candidatar();
-			sair = true;
 			break;
 		case 2:
 			adicionarPergunta();
-			sair = true;
 			break;
 		case 3:
 			removePergunta();
-			sair = true;
 			break;
 		case 4:
 			listarForms();
-			sair = true;
 			break;
 		case 5:
 			pesquisarFormularios();
-			sair = true;
 			break;
 		case 6:
 			System.out.println("Validar");
-			sair = true;
+//			sair = true;
 			break;
-			// retirar os breaks quando terminar os menus
+		default: 
+			System.out.println("Valor invalido");
 		}
 	}
 
@@ -82,7 +83,7 @@ public class Menu {
 
 	private void candidatar() throws FileNotFoundException {
 		Candidatarse c = new Candidatarse();
-		c.Candidatar();
+		c.candidatar();
 	}
 	
 	private void adicionarPergunta() throws IOException {
@@ -95,13 +96,14 @@ public class Menu {
 		f.listarPerguntas();
 	}
 	
-	private void removePergunta() {
+	private void removePergunta() throws IOException {
 		RemoverPergunta r = new RemoverPergunta();
 		r.removePergunta();
 	}
 	
 	private void pesquisarFormularios() {
 		PesquisarForms p = new PesquisarForms();
+		p.encontraForm();
 	
 	}
 

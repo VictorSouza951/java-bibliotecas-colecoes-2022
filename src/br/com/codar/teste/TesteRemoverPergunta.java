@@ -1,4 +1,4 @@
-package br.com.codar;
+package br.com.codar.teste;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class RemoverPergunta {
-	
-	public void removePergunta() throws IOException {
+public class TesteRemoverPergunta {
+
+	public static void main(String[] args) throws IOException {
 		
 		Path path = Paths.get("formulario.txt");
 		List<String> lines = Files.lines(path).collect(Collectors.toList());

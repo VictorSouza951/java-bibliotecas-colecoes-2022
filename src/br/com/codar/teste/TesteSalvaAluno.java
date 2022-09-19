@@ -1,20 +1,14 @@
-package br.com.codar;
+package br.com.codar.teste;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Candidatarse {
+public class TesteSalvaAluno {
 
-	public void candidatar() throws FileNotFoundException {
+	public static void main(String[] args) throws Exception {
 		Scanner leitorDeForms = new Scanner(new File("formulario.txt"));
 
 		List<String> respostas = new ArrayList<>();
@@ -39,7 +33,5 @@ public class Candidatarse {
 		salvForm.close();
 		sc.close();
 		leitorDeForms.close();
-		
 	}
-
 }

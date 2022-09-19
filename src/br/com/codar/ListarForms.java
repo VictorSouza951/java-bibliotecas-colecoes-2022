@@ -10,9 +10,9 @@ import java.util.Scanner;
 public class ListarForms {
 
 	public void listarPerguntas() {
-		File dir = new File("C:/Users/Victor/Desktop/java-bibliotecas-colecoes-2022");
+		File dir = new File("./formulario-usuario/");
 
-		System.out.println("Formulários cadastrados: ");
+		System.out.println("Formularios cadastrados: ");
 		File[] arquivos = dir.listFiles(new FilenameFilter() {
 			@Override
 			public boolean accept(File dir, String nome) {
