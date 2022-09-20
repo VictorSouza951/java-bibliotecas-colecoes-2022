@@ -1,6 +1,8 @@
-package br.com.codar;
+package br.com.codar.main;
 
 import java.io.IOException;
+
+import br.com.codar.menu.Menu;
 
 public class Main {
 
@@ -10,7 +12,7 @@ public class Main {
 		while (menu.getExecutando()) {
 			menu.mostraMenu();
 			int escolha = menu.escolhaUsuario();
-			menu.entraMenu(escolha);
+			menu.acessaMenu(escolha);
 		}
 	}
 

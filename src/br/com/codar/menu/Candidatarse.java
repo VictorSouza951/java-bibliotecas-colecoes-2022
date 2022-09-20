@@ -1,14 +1,20 @@
-package br.com.codar.teste;
+package br.com.codar.menu;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class TesteSalvaAluno {
+public class Candidatarse {
 
-	public static void main(String[] args) throws Exception {
+	public void candidatar() throws FileNotFoundException {
 		Scanner leitorDeForms = new Scanner(new File("formulario.txt"));
 
 		List<String> respostas = new ArrayList<>();
@@ -24,7 +30,6 @@ public class TesteSalvaAluno {
 			System.out.println("Tente novamente qunado tiver 16 anos!");
 			return;
 		}
-//		respostas.forEach(System.out::println);
 
 		File pasta = new File("./formulario-usuario/");
 		int listaDeArquivos = pasta.listFiles().length;
@@ -34,8 +39,8 @@ public class TesteSalvaAluno {
 		respostas.forEach(salvForm::println);
 
 		salvForm.close();
-//		sc.close();
 		leitorDeForms.close();
 		System.out.println("\nCadastro completo!");
 	}
+
 }

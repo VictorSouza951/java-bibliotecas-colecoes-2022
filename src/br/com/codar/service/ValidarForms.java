@@ -1,4 +1,4 @@
-package br.com.codar;
+package br.com.codar.service;
 
 public class ValidarForms {
 

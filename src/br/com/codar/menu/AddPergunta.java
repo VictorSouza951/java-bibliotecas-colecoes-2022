@@ -1,15 +1,13 @@
-package br.com.codar.teste;
+package br.com.codar.menu;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class TesteAddPergunta {
+public class AddPergunta {
 
-	public static void main(String[] args) throws IOException {
+	public void escrevePergunta() throws IOException {
 
 		String pergunta;
 		long numeroDaPergunta = Files.lines(Paths.get("formulario.txt")).count();
@@ -21,7 +19,5 @@ public class TesteAddPergunta {
 		pergunta = sc.nextLine();
 		pw.println("P" + ++numeroDaPergunta + "|" + pergunta);
 		pw.close();
-		sc.close();
 	}
-
 }

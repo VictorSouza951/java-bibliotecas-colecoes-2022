@@ -1,4 +1,4 @@
-package br.com.codar;
+package br.com.codar.menu;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,10 +15,10 @@ public class RemoverPergunta {
 	public void removePergunta() throws IOException {
 		
 		Path path = Paths.get("formulario.txt");
-		List<String> lines = Files.lines(path).collect(Collectors.toList());
+		List<String> linhas = Files.lines(path).collect(Collectors.toList());
 
 		Scanner sc = new Scanner(System.in);
-		lines.forEach(System.out::println);
+		linhas.forEach(System.out::println);
 
 		System.out.println(" \nDigite o numero da pergunta que quer deletar");
 		int numeroDaPergunta = sc.nextInt();
@@ -28,13 +28,12 @@ public class RemoverPergunta {
 			return;
 		}
 
-		lines.remove(numeroDaPergunta - 1);
+		linhas.remove(numeroDaPergunta - 1);
 		System.out.println("A Pergunta foi deletada.\n");
-		lines.forEach(System.out::println);
 
 		PrintWriter pw = new PrintWriter(new FileOutputStream("formulario.txt"));
-		for (int i = 0; i <= lines.size() - 1; i++) {
-			pw.println(lines.get(i));
+		for (int i = 0; i <= linhas.size() - 1; i++) {
+			pw.println(linhas.get(i));
 		}
 
 		pw.close();
